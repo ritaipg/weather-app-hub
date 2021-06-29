@@ -150,6 +150,12 @@ i.cloudy {
   font-size: 16px;
   top: -10px;
 }
+
+a {
+  color: #ee930a;
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
   display: block;
