@@ -27,7 +27,7 @@
       <h1>How's the weather in...</h1>
       <form id="enter-city">
         <div class="row">
-          <div class="col-4">
+          <div class="col-6">
             <input
               type="search"
               class="cityInput"
@@ -44,14 +44,18 @@
         </div>
       </form>
       <div class="row">
-        <div class="col-4">
+        <div class="col-6">
           <h2></h2>
           <h3></h3>
           <h4></h4>
         </div>
         <div class="col-4">
+          <div class="clearfix temperature">
+            <div class="float-right">
+              <strong id="temp"></strong><span class="units"> °C | °F</span>
+            </div>
+          </div>
           <ul>
-            <li id="temp"></li>
             <li>Humidity: <span id="humidity"> 10</span>%</li>
             <li>Wind: <span id="wind">10 </span> km/h</li>
           </ul>

@@ -14,7 +14,7 @@
   margin-left: 50px;
   font-family: "Permanent Marker", cursive;
   border-radius: 10px;
-  max-width: 800px;
+  max-width: 500px;
 }
 
 h1 {
@@ -142,8 +142,14 @@ i.cloudy {
   color: rgb(10, 26, 170);
   padding: 0 0 0;
   font-size: 30px;
+  font-weight: 300;
 }
 
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -10px;
+}
 ul {
   list-style-type: none;
   display: block;
@@ -152,8 +158,9 @@ ul {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 15px;
-  margin-top: 10px;
+  padding-inline-start: 0;
+  margin-top: 5px;
+  margin-bottom: 10px;
   color: #0871e9;
 }
 

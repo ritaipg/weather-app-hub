@@ -52,7 +52,7 @@ function showWeather(response) {
   let headerUpdate = document.querySelector("#temp");
   let temperature = Math.round(response.data.main.temp);
   header.innerHTML = `${response.data.name}`;
-  headerUpdate.innerHTML = `${temperature}ºC`;
+  headerUpdate.innerHTML = `${temperature}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
