@@ -52,6 +52,7 @@ function showWeather(response) {
   let header = document.querySelector("h2");
   let headerUpdate = document.querySelector("#temp");
   let temperature = Math.round(response.data.main.temp);
+  let icon = document.querySelector("#icon");
   header.innerHTML = `${response.data.name}`;
   headerUpdate.innerHTML = `${temperature}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -62,6 +63,11 @@ function showWeather(response) {
   document.querySelector("#update").innerHTML = formatUpdateTime(
     response.data.dt * 1000
   );
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
   console.log(response);
 }
 
