@@ -1,25 +1,26 @@
-let now = new Date();
+function formatUpdateTime(timestamp) {
+  let now = new Date(timestamp);
 
-let h3 = document.querySelector("h3");
+  let h3 = document.querySelector("h3");
 
-let hours = now.getHours();
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  return `${day}, ${hours}:${minutes}`;
 }
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-
-h3.innerHTML = `${day}, ${hours}:${minutes}`;
 
 function search(city) {
   let apiKey = "31a0d353f943e496c3f9a7f3bee813e9";
@@ -58,6 +59,9 @@ function showWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("h4").innerHTML = response.data.weather[0].main;
+  document.querySelector("#update").innerHTML = formatUpdateTime(
+    response.data.dt * 1000
+  );
   console.log(response);
 }
 
