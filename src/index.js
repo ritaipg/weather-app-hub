@@ -51,8 +51,10 @@ function getLocation(event) {
 function showWeather(response) {
   let header = document.querySelector("h2");
   let headerUpdate = document.querySelector("#temp");
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let icon = document.querySelector("#icon");
+
   header.innerHTML = `${response.data.name}`;
   headerUpdate.innerHTML = `${temperature}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -77,5 +79,18 @@ enterCity.addEventListener("submit", displayCity);
 
 let currentButton = document.querySelector("#current-location");
 currentButton.addEventListener("click", getLocation);
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheit);
 
 search("Olhao");
