@@ -155,9 +155,14 @@ i.cloudy {
   top: -10px;
 }
 
+.temperature .active {
+  color: rgb(10, 26, 170);
+  cursor: default;
+  text-decoration: none;
+}
+
 a {
   color: #ee930a;
-  text-decoration: none;
 }
 
 ul {
@@ -181,5 +186,4 @@ ul {
 
 #hub {
   color: #a31c04;
-  text-decoration: underline;
 }
