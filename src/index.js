@@ -48,6 +48,30 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <div class="weather-forecast-day">${day}</div>
+            
+            <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" width="36"/>
+            <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperatures-max">18</span>º |
+            <span class="weather-forecast-temperatures-min">12</span>º
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function showWeather(response) {
   let header = document.querySelector("h2");
   let headerUpdate = document.querySelector("#temp");
@@ -105,3 +129,5 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
 
 search("Olhao");
+
+displayForecast();
