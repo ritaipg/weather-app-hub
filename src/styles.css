@@ -12,7 +12,7 @@
   padding: 10px 10px;
   margin-top: 50px;
   margin-right: 50px;
-  margin-left: 250px;
+  margin-left: 150px;
   font-family: "Permanent Marker", cursive;
   border-radius: 10px;
   max-width: 600px;
@@ -73,6 +73,23 @@ i.sun {
 }
 i.cloudy {
   color: rgb(95, 122, 196);
+}
+
+.forecast {
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.weather-forecast-day {
+  border-color: #e9e198af !important;
+
+  border: thick double;
+}
+
+.weather-forecast-temperatures {
+  font-size: 15px;
+  color: #2e7be0;
 }
 
 .cityInput {
