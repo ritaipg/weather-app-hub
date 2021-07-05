@@ -48,7 +48,8 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -69,7 +70,14 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "31a0d353f943e496c3f9a7f3bee813e9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -95,6 +103,8 @@ function showWeather(response) {
   );
   icon.setAttribute("alt", response.data.weather[0].description);
   console.log(response);
+
+  getForecast(response.data.coord);
 }
 
 let enterCity = document.querySelector("#enter-city");
@@ -129,5 +139,3 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
 
 search("Olhao");
-
-displayForecast();
