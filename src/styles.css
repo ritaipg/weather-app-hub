@@ -60,15 +60,15 @@ form {
 .weather-forecast {
   text-align: center;
   margin-top: 20px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 20px;
   background-color: rgba(206, 206, 94, 0.342);
   border-radius: 10px 10px 10px;
 }
 
 .weather-forecast-temperatures {
-  font-size: 15px;
+  font-size: 14px;
   color: #2e7be0;
 }
 
