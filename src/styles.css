@@ -56,36 +56,15 @@ form {
   display: block;
   object-position: 6px -16px;
 }
-.border-success {
-  border-color: #eee7aa !important;
-  text-align: center;
-  border: thick double;
-}
-.text-success {
-  color: #4f8cdb !important;
-}
-
-.today {
-  margin: 0 auto;
-}
-i.sun {
-  color: rgba(230, 160, 70, 0.966);
-}
-i.cloudy {
-  color: rgb(95, 122, 196);
-}
 
 .weather-forecast {
   text-align: center;
+  margin-top: 20px;
   margin-left: 30px;
   margin-right: 30px;
-  margin-bottom: 15px;
-}
-
-.weather-forecast-day {
-  border-color: #e9e198af !important;
-
-  border: thick double;
+  margin-bottom: 20px;
+  background-color: rgba(206, 206, 94, 0.342);
+  border-radius: 10px 10px 10px;
 }
 
 .weather-forecast-temperatures {
@@ -201,6 +180,7 @@ ul {
 .linkHub {
   text-align: center;
   font-size: 12px;
+  margin-bottom: 10px;
 }
 
 #hub {
